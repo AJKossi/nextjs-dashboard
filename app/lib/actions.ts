@@ -2,6 +2,8 @@
 import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { signIn } from '@/auth';
+import { AuthError } from 'next-auth';
 import { z } from 'zod';
 
 const FormSchema = z.object({
@@ -111,8 +113,6 @@ export async function deleteInvoice(id: string) {
     }
 }
 
-import { signIn } from '@/auth';
-import { AuthError } from 'next-auth';
  
 // ...
  
